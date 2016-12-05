@@ -1,0 +1,211 @@
+    <!DOCTYPE HTML>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>AirTrack!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Styles -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <link rel='stylesheet' id='prettyphoto-css'  href="static/css/prettyPhoto.css" type='text/css' media='all'>
+    <link href="static/css/fontello.css" type="text/css" rel="stylesheet">
+    <!--[if lt IE 7]>
+            <link href="css/fontello-ie7.css" type="text/css" rel="stylesheet">  
+        <![endif]-->
+    <!-- Google Web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script src='http://code.jquery.com/jquery-2.1.0.min.js'></script>
+    <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <style>
+    body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+    </style>
+    <link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="static/img/favicon.ico">
+    <!-- JQuery -->
+    <!-- // <script type="text/javascript" src="js/jquery.js"></script> -->
+    <!-- Load ScrollTo -->
+    <!-- // <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script> -->
+    <!-- Load LocalScroll -->
+    <!-- // å<script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script> -->
+    <!-- prettyPhoto Initialization -->
+    <script type="text/javascript" charset="utf-8">
+          // $(document).ready(function(){
+          //   $("a[rel^='prettyPhoto']").prettyPhoto();
+          // });
+        </script>
+    </head>
+    <body>
+    <!--******************** NAVBAR ********************-->
+    <div class="navbar-wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <h1 class="brand"><a href="http://localhost:5000/">AirTrack!</a></h1>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <nav class="pull-right nav-collapse collapse">
+              <ul id="menu-main" class="nav">
+                {% if not session.logged_in %}
+                <li><a title="team" href="http://localhost:5000/facebook_login">Login with Facebook</a></li>
+                {% else %}
+                <li><a title="team" href="http://localhost:5000/logout">Logout</a></li>
+                <li><a href="/profile" title="team">{{username}}</a></li>
+                {% endif %}
+                <li><a title="team" href="http://localhost:5000/team">Team</a></li>
+                <li><a title="contact" href="localhost:5000/contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.navbar-inner -->
+      </div>
+      <!-- /.navbar -->
+    </div>
+    <!-- /.navbar-wrapper -->
+    <div id="top"></div>
+    <!--******************** News Section ********************-->
+    <section id="news" class="single-page scrollblock">
+      <div class="container">
+        <div class="align"><i class="icon-pencil-circled"></i></div>
+        <h1>AirTrack!</h1>
+        <div class="row">
+          <div class="span12">
+            <div class="cform" id="theme-form">
+              <form action="/flightStatus" method="post" class="cform-form">
+                <div class="row">
+                  <div class="span6"> <span class="your-name">
+                    <h2>Enter your airline carrier:</h2>
+                    <input type="text" id="airline" name="airline" placeholder="Carrier (airline) code" class="cform-text" size="40" title="your name">
+                    </span> 
+                  </div>
+                    <div class="span6"> <span class="your-email">
+                    <h2>Enter your flight number:</h2>
+                    <input type="text" name="number" placeholder="Flight number" class="cform-text" size="40" title="your email">
+                    </span> </div>
+                </div>
+                    <div class="row">
+                  <div class="span4"> <span class="company">
+                    <h2>Enter the year:</h2>
+                    <select name="year">Year</option>
+                    <option value='2014'>2014</option>
+                    <option value='2013'>2013</option>
+                    <option value='2012'>2012</option>
+                    </select>
+                    </span> </div>
+                  <div class="span4"> <span class="website">
+                    <h2>Enter the month:</h2>
+                    <select name="month">Select Month</option>
+                    <option value='01'>January</option>
+                    <option value='02'>February</option>
+                    <option value='03'>March</option>
+                    <option value='04'>April</option>
+                    <option value='05'>May</option>
+                    <option value='06'>June</option>
+                    <option value='07'>July</option>
+                    <option value='08'>August</option>
+                    <option value='09'>September</option>
+                    <option value='10'>October</option>
+                    <option value='11'>November</option>
+                    <option value='12'>December</option>
+                    </select>
+                    </span> </div>
+                  <div class="span4"> <span class="website">
+                    <h2>Enter the day</h2>
+                    <select name="day">
+                    <option value='01'>01</option>
+                    <option value='02'>02</option>
+                    <option value='03'>03</option>
+                    <option value='04'>04</option>
+                    <option value='05'>05</option>
+                    <option value='06'>06</option>
+                    <option value='07'>07</option>
+                    <option value='08'>08</option>
+                    <option value='09'>09</option>
+                    <option value='10'>10</option>
+                    <option value='11'>11</option>
+                    <option value='12'>12</option>
+                    <option value='13'>13</option>
+                    <option value='14'>14</option>
+                    <option value='15'>15</option>
+                    <option value='16'>16</option>
+                    <option value='17'>17</option>
+                    <option value='18'>18</option>
+                    <option value='19'>19</option>
+                    <option value='20'>20</option>
+                    <option value='21'>21</option>
+                    <option value='22'>22</option>
+                    <option value='23'>23</option>
+                    <option value='24'>24</option>
+                    <option value='25'>25</option>
+                    <option value='26'>26</option>
+                    <option value='27'>27</option>
+                    <option value='28'>28</option>
+                    <option value='29'>29</option>
+                    <option value='30'>30</option>
+                    <option value='31'>31</option>
+                    </select>
+                    </span> </div>
+                  </div>
+                <div>
+                </br>
+            </br>
+                  <input type="submit" value="Search" class="cform-submit pull-left">
+                </div>
+                <div class="cform-response-output"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+        <br>
+    </section>
+    <hr>  
+    <!-- Loading the javaScript at the end of the page -->
+    <!-- // <script type="text/javascript" src="js/bootstrap.js"></script> -->
+    <!-- // <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> -->
+    <!-- // <script type="text/javascript" src="js/site.js"></script> -->
+    
+    <!--ANALYTICS CODE-->
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      var airlines = [];
+
+        $.ajax({
+          url:'static/airline.json',
+          dataType:'json',
+          success: function(data){
+            
+            for (var i = 0, j = data.airlines.length; i < j; i++){
+                if(typeof data.airlines[i].iata !== 'undefined'){
+                    airlines.push(data.airlines[i].name + "||" +data.airlines[i].iata)
+                }
+            }
+            console.log(airlines)
+              $('#airline').autocomplete({
+                source: airlines,
+              });
+          }
+        });
+
+      $('#airline').keyup(function(){
+        
+      });
+    });
+  </script>
+    </body>
+    </html>

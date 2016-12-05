@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Lab 6</title>
+ 	<link type="text/css" rel="stylesheet" href="static/css/styles.css">
+ 	</head>
+ 	<body>
+{% if session["loggedin"] == 1 %}
+<a href="/logout" class="button4">LOGOUT</a><br/>
+
+{% else %}
+<a href="/loginform">LOGIN</a><br/>
+{% endif %}
+
+	<form action="/addaction" method="post">
+		<p><input type="text" name="name" placeholder="Enter fruit name"/></p>
+		<p><input type="text" name="color" placeholder="Enter fruit color"/></p>
+		<p><input type="submit"  name="login" class="button4" value="Submit"/><p>
+</body>
+</html>

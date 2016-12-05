@@ -1,0 +1,20 @@
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<body>
+		<!-- {{pagedata}} -->
+	
+		<ul>
+		{%for item in pagedata%}
+		<li style="list-style:none">
+			<ul>
+				<li>Name: {{item['name']}}</li>
+				<li>Color: {{item['color']}}</li>
+				<a href="">UPDATE</a> | <a href="">DELETE</a>
+			</ul>
+		</li>
+		
+		{%endfor%}
+		</ul>
+
+	</body>
+</html>

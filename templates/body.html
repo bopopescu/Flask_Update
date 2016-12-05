@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Lab 6</title>
+ 	<link type="text/css" rel="stylesheet" href="static/css/styles.css">
+ 	</head>
+ 	<body>
+ 	<p><a href="/addform" class="button4">Add Fruit</a></p><br/>
+	{{session["loggedin"]}}
+
+	{% if session["loggedin"] == 1 %}
+	<p><a href="/logout" class="button4">LOGOUT</a></p><br/>
+
+	{% else %}
+	<p><a href="/loginform" class="button4">LOGIN</a></p><br/>
+	{% endif %}
+
+	{% for item in pagedata %}
+		<p><h1>{{item[0]}}</br>{{item[1]}}</h1></P><br/><a href="/update/{{item[2]}}" class="button4">Update</a><a href="/delete/{{item[2]}}" class="button4">Delete</a></br>
+	{% endfor %}
+</body>
+</html>
+

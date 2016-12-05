@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Lab 6</title>
+      <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+ 	</head>
+ 	<body>
+ 	<h1>Update Fruit</h1>
+	<form action="/updateaction" method="post">
+		<p><input type="text" name="updatename" placeholder="Enter fruit name"/></p>
+		<p><input type="text" name="updatecolor" placeholder="Enter fruit color"/></p>
+		<p><input type="submit"  name="update" class="button4" value="Submit"/><p>
+	</form>
+</body>
+</html>

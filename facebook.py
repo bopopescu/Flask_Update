@@ -59,7 +59,7 @@ def search():
     airline = request.form["airline"]
     airlineSplit = airline.split("||")
     aita = airlineSplit[1]
-    
+
     number = request.form["number"]
 
     year = request.form["year"]
@@ -78,7 +78,7 @@ def search():
     # departure info
     departureDate= cleanData["flightStatuses"][0]["departureDate"]["dateLocal"]
     departureTime = departureDate.split("T")
-    departure=departureTime[0] 
+    departure=departureTime[0]
     cleanDeparture= departureTime[1][:-7]
 
     # arrival info
@@ -136,7 +136,7 @@ def savedFlight(flightId):
     # departure info
     departureDate= cleanData["flightStatus"]["departureDate"]["dateLocal"]
     departureTime = departureDate.split("T")
-    departure=departureTime[0] 
+    departure=departureTime[0]
     cleanDeparture= departureTime[1][:-7]
 
     # arrival info

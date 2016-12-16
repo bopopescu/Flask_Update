@@ -11,9 +11,9 @@
 <pre><h4>airtrack.py</h4> - (utilizing flightstats api)
 <h4>api.py</h4> - (login, google map api, openweathermap api,
 and eventbrite api)
-extras.py - (load json object as an api using python)
-facebook.py - (load favicon, Facebook OAuth, flightstats api,
+<h4>extras.py</h4> - (load json object as an api using python)
+<h4>facebook.py</h4> - (load favicon, Facebook OAuth, flightstats api,
 date objects, user profile)
-sslfinal.py - (login)
-test.py - (login, create JSON, parseJSON, google api, form,
+<h4>sslfinal.py</h4> - (login)
+<h4>test.py</h4> - (login, create JSON, parseJSON, google api, form,
 and CRUD)</pre>

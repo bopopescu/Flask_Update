@@ -8,7 +8,7 @@
 <h2>Mini Python Applications</h2>
 ###################
 
-<pre><bold>airtrack.py</bold> - (utilizing flightstats api)
+<pre><h3>airtrack.py</h3> - (utilizing flightstats api)
 api.py - (login, google map api, openweathermap api,
 and eventbrite api)
 extras.py - (load json object as an api using python)

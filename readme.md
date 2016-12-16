@@ -8,8 +8,8 @@
 <h2>Mini Python Applications</h2>
 ###################
 
-<pre><h3>airtrack.py</h3> - (utilizing flightstats api)
-api.py - (login, google map api, openweathermap api,
+<pre><h5>airtrack.py</h5> - (utilizing flightstats api)
+<h5>api.py</h5> - (login, google map api, openweathermap api,
 and eventbrite api)
 extras.py - (load json object as an api using python)
 facebook.py - (load favicon, Facebook OAuth, flightstats api,
